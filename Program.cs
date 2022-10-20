@@ -1,44 +1,31 @@
 ﻿using System;
 
-namespace Пример_за_Шаблонен_generic__метод
+namespace Деклариране_на_шаблонен_generic__клас
 {
-    public class Program
+    class Test<T>
     {
-        public static void Main()
+        T _value;
+
+        public Test(T t)
         {
-            DataStore<string> cities = new DataStore<string>();
-            cities.AddOrUpate(0, "Mumbai");
-            cities.AddOrUpate(1, "Chicago");
-            cities.AddOrUpate(2, "London");
-
-            Console.WriteLine(cities.GetData(100));
-
-            DataStore<int> empIds = new DataStore<int>();
-            empIds.AddOrUpdate(0, 50);
-            empIds.AddOrUpdate(1, 65);
-            empIds.AddOrUpdate(2, 89);
-
-            Console.WriteLine(empIds.GetData(0));
+            this._value = t;
+        }
+        public void Write()
+        {
+            Console.WriteLine(this._value);
         }
     }
-    class DataStore<T>
+
+    class Program
     {
-        private T[] _data = new T[10];
-        public void AddOrUpdate(int index, T item)
+        static void Main()
         {
-            public void AddOrUpdate(int index, T item)
-            {
-                if (index >= 0 && index < 10)
-                    _data[index] = item;
-            }
-            public T GetData(int index)
-            {
-                if (index >= 0 && index < 10)
-                    return [index] = item;
-                else
-                    return default(T);
-            }
+            Test<int> test1 = new Test<int>(5);
+            test1.Write();
+
+            Test<string> test2 = new Test <string> ("cat");
+            test2.Write();
         }
+
     }
 }
-  
