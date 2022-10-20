@@ -1,31 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-namespace Деклариране_на_шаблонен_generic__метод
+
+namespace Пример_за_шаблонен_generic__клас
 {
-    class Program
+    public class Program
     {
-        static List<T> GetInitializedList<T>(T value, int count)
+        public static void Main()
         {
-            List<T> list = new List<T>();
-            for (int i = 0; i < count; i++)
-            {
-                list.Add(value);
-            }
-            return list;
-        }
-        static void Main()
-        {
-            List<bool> list1 = GetInitializedList(true, 5);
-            List<string> list2 = GetInitializedList<string>("Perls", 3);
-            foreach (bool value in list1)
-            {
-                Console.WriteLine(value);
-            }
-            foreach (string value in list2)
-            {
-                Console.WriteLine(value);
-            }
+            DataStore<string> strStore = new DataStore<string>();
+            strStore.Data = "Hello World!";
+
+            Console.WriteLine(strStore.Data);
+
+            DataStore<int> intStore = new DataStore<int>();
+            intStore.Data = 100;
+
+            Console.WriteLine(intStore.Data);
+
+            KeyValuePair<int, string> kvp1 = new KeyValuePair<int, string>();
+            kvp1.Key = 100;
+            kvp1.Value = "hundred";
+            Console.WriteLine(kvp1.Key + " , " + kvp1.Value);
+
+            KeyValuePair<string, string> kvp2 = new KeyValuePair<string, string>();
+            kvp2.Key = "IT";
+            kvp2.Value = "Information Technology";
+
+            Console.WriteLine(kvp2.Key + " , " + kvp2.Value);
         }
     }
-}
-   
+    class DataStore<T>
+    {
+        public T Data { get; set; }
+    }
+    class KeyValuePair<TKey , TValue>
+    {
+        public TKey Key { get; set;  }
+        public TValue Value { get; set; }
+         }
+      }
+ 
+
