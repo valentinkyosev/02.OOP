@@ -1,32 +1,25 @@
 ﻿using System;
 
-namespace Статичен_конструктор
+namespace Статични_методи
 {
-    public class Program
+    class Program
     {
-        public static void Main()
+        static int counter = 0;
+        string name = "Demo Program";
+
+        static void Main(string[] args)
         {
-            StopWatch.DisplayInfo();
-            StopWatch.DisplayInfo();
+            counter++;
+            Display("Hello World!")
+
+                name = "New emo Program";
+            SetRootFolder("C: \MyProgram");
         }
-    }
-    public class StopWatch
-    {
-        static StopWatch()
+        static void Display(string text)
         {
-            Console.WriteLine("Static constructor called");
+            Console.WriteLine(text);
         }
-        public StopWatch()
-        {
-            Console.WriteLine("Instance constructor called");
-        }
-        public static void DisplayInfo()
-        {
-            Console.WriteLine("DisplayInfo called");
-        }
-        public void Start()
-        { }
-        public void Stop()
+        public void SetRootFolder(string path)
         { }
     }
 }
