@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Деклариране на шаблонен(generic) клас", "Деклариране на шаблонен(generic) клас\Деклариране на шаблонен(generic) клас.csproj", "{105C19DD-CB43-438A-A3AA-5CEF588C34B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{105C19DD-CB43-438A-A3AA-5CEF588C34B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105C19DD-CB43-438A-A3AA-5CEF588C34B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105C19DD-CB43-438A-A3AA-5CEF588C34B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105C19DD-CB43-438A-A3AA-5CEF588C34B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC07EF88-3ED7-469A-9F3D-E2B04847B93E}
+	EndGlobalSection
+EndGlobal
