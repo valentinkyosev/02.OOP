@@ -1,32 +1,31 @@
 ﻿using System;
 
-namespace Статични_полета
+namespace Деклариране_на_шаблонен_generic__клас
 {
-    public class Program
+    class Test<T>
     {
-        static int counter = 0;
-        string name = "Demo Program";
+        T _value;
 
-        public static void Main()
+        public Test(T t)
         {
-            StopWatch sw1 = new StopWatch();
-            StopWatch sw2 = new StopWatch();
-            Console.WriteLine(StopWatch.NoOfInstances);
-
-            StopWatch sw3 = new StopWatch();
-            StopWatch sw4 = new StopWatch();
-            Console.WriteLine(StopWatch.NoOfInstances);
+            this._value = t;
         }
-
+        public void Write()
+        {
+            Console.WriteLine(this._value);
+        }
     }
 
-    public class StopWatch
+    class Program
     {
-        public static int NoOfInstances = 0;
-
-        public StopWatch()
+        static void Main()
         {
-            StopWatch.NoOfInstances++;
+            Test<int> test1 = new Test<int>(5);
+            test1.Write();
+
+            Test<string> test2 = new Test <string> ("cat");
+            test2.Write();
         }
+
     }
 }
