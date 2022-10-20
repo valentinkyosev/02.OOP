@@ -1,25 +1,32 @@
 ﻿using System;
 
-namespace Статични_методи
+namespace Статични_полета
 {
-    class Program
+    public class Program
     {
         static int counter = 0;
         string name = "Demo Program";
 
-        static void Main(string[] args)
+        public static void Main()
         {
-            counter++;
-            Display("Hello World!")
+            StopWatch sw1 = new StopWatch();
+            StopWatch sw2 = new StopWatch();
+            Console.WriteLine(StopWatch.NoOfInstances);
 
-                name = "New emo Program";
-            SetRootFolder("C: \MyProgram");
+            StopWatch sw3 = new StopWatch();
+            StopWatch sw4 = new StopWatch();
+            Console.WriteLine(StopWatch.NoOfInstances);
         }
-        static void Display(string text)
+
+    }
+
+    public class StopWatch
+    {
+        public static int NoOfInstances = 0;
+
+        public StopWatch()
         {
-            Console.WriteLine(text);
+            StopWatch.NoOfInstances++;
         }
-        public void SetRootFolder(string path)
-        { }
     }
 }
