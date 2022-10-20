@@ -1,31 +1,31 @@
 ﻿using System;
-
-namespace Деклариране_на_шаблонен_generic__клас
+using System.Collections.Generic;
+namespace Деклариране_на_шаблонен_generic__метод
 {
-    class Test<T>
-    {
-        T _value;
-
-        public Test(T t)
-        {
-            this._value = t;
-        }
-        public void Write()
-        {
-            Console.WriteLine(this._value);
-        }
-    }
-
     class Program
     {
+        static List<T> GetInitializedList<T>(T value, int count)
+        {
+            List<T> list = new List<T>();
+            for (int i = 0; i < count; i++)
+            {
+                list.Add(value);
+            }
+            return list;
+        }
         static void Main()
         {
-            Test<int> test1 = new Test<int>(5);
-            test1.Write();
-
-            Test<string> test2 = new Test <string> ("cat");
-            test2.Write();
+            List<bool> list1 = GetInitializedList(true, 5);
+            List<string> list2 = GetInitializedList<string>("Perls", 3);
+            foreach (bool value in list1)
+            {
+                Console.WriteLine(value);
+            }
+            foreach (string value in list2)
+            {
+                Console.WriteLine(value);
+            }
         }
-
     }
 }
+   
