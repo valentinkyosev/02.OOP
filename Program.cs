@@ -1,22 +1,25 @@
 ﻿using System;
 
-namespace ex01
+namespace Статични_методи
 {
     class Program
     {
+        static int counter = 0;
+        string name = "Demo Program";
+
         static void Main(string[] args)
         {
-            Person firstPerson = new Person();
+            counter++;
+            Display("Hello World!")
 
-            firstPerson.Name = "Gosho";
-            firstPerson.Age = 15;
-            firstPerson.IntroduceYourself();
-            firstPerson.Age = 17;
-            firstPerson.IntroduceYourself();
-
-            firstPerson.Name = "Ivan";
-            firstPerson.Age = 19;
-            firstPerson.IntroduceYourself();
+                name = "New emo Program";
+            SetRootFolder("C: \MyProgram");
         }
+        static void Display(string text)
+        {
+            Console.WriteLine(text);
+        }
+        public void SetRootFolder(string path)
+        { }
     }
 }
